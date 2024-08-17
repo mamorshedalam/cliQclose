@@ -1,3 +1,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .x-container {
+    @apply max-w-[1200px] w-full xl:px-16 lg:px-12 md:px-9 px-5 mx-auto;
+  }
+  /* transition */
+  .x-animation {
+    @apply transition-all duration-500 ease-out;
+  }
+  .x-animation-fade {
+    @apply transition-opacity duration-150 ease-linear;
+  }
+  /* custom made */
+  .x-btn{
+    @apply bg-violet-900 text-white font-semibold py-1.5 px-6 rounded-lg border-2 border-violet-900 hover:bg-white hover:text-violet-900;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-white text-neutral-600 sm:text-lg;
+  }
+
+  section {
+    @apply relative;
+  }
+
+  a,
+  button {
+    @apply inline-block cursor-pointer;
+  }
+
+  img {
+    @apply w-full align-middle;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply outline-none bg-transparent;
+  }
+
+  a,
+  button,
+  span,
+  p,
+  i,
+  input,
+  select,
+  textarea,
+  li,
+  ul,
+  img,
+  svg,
+  label,
+  svg path,
+  tr,
+  td,
+  *::after,
+  *::before,
+  .transition-3,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply transition-all duration-300 ease-in;
+  }
+}
+
+@layer utilities {
+}
