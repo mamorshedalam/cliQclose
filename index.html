@@ -19,16 +19,17 @@
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body x-cloak>
+<body x-cloak x-data="{shadowActive:false}" @scroll.window="shadowActive = window.pageYOffset > 200">
      <!-- HEADER -->
-     <header class="relative" x-cloak x-data="{sidebar:false}">
-          <div class="x-container">
+     <header class="fixed top-0 left-0 w-full z-[999] md:p-4 p-2" x-cloak x-data="{sidebar:false}">
+          <div :class="shadowActive? 'x-shadow':''" class="x-container bg-white rounded-xl">
                <div class="flex flex-wrap items-center justify-between py-2.5">
                     <div>
                          <a href="index.html"><img src="assets/img/logo.png" alt="logo" class="lg:h-14 sm:h-12 h-9"></a>
                     </div>
-                    <div :class="sidebar?'opacity-100 visible max-h-80':'opacity-0 invisible max-h-0'" class="md:relative absolute top-full left-0 md:w-fit w-full md:opacity-100 md:visible md:max-h-fit bg-white md:pb-0 pb-4 x-animation">
-                         <ul class="flex md:flex-row flex-col text-center font-semibold text-neutral-800">
+                    <div :class="sidebar?'opacity-100 visible max-h-80 left-2 rounded-xl x-shadow':'opacity-0 invisible max-h-0'"
+                         class="md:relative absolute top-full md:left-0 md:w-fit w-[calc(100%-1rem)] md:opacity-100 md:visible md:max-h-fit bg-white md:pb-0 pb-4 x-animation">
+                         <ul class="flex md:flex-row flex-col text-center font-semibold text-zinc-800">
                               <li><a href="realtors.html" class="lg:p-5 md:p-4 p-1">Realtors</a></li>
                               <li><a href="plans.html" class="lg:p-5 md:p-4 p-1">Plans</a></li>
                               <li><a href="buyers-sellers.html" class="lg:p-5 md:p-4 p-1">Buyers and Sellers</a></li>
@@ -48,7 +49,95 @@
           </div>
      </header>
      <!-- MAIN -->
-     <main class=""></main>
+     <main class="">
+          <!-- HERO -->
+          <section class="xl:py-40 md:py-32 sm:py-24 py-20 bg-bottom bg-cover bg-no-repeat" style="background-image: url(assets/img/banner/banner-1.jpg);">
+               <div class="x-container">
+                    <div class="flex flex-wrap items-center">
+                         <div class="lg:w-1/2 w-full sm:mt-6 mt-4 md:space-y-5 space-y-2 lg:order-1 order-2">
+                              <h1 class="font-bold md:text-4xl sm:text-3xl text-2xl">Unlocking Your Next Closing,<br> One Click at a <span
+                                        class="font-caveat md:text-5xl sm:text-4xl text-3xl text-violet-900">Time.</span></h1>
+                              <h4>At cliQclose, we’re not just about leads; we’re about connections. Let’s turn those “maybes” into “absolutely yes!”</h4>
+                              <a href="contact.html" class="x-btn hover:-translate-y-1">Let's Talk</a>
+                         </div>
+                         <div class="lg:w-1/2 w-full lg:order-2 order-1">
+                              <img src="assets/img/woman-laptop-paint.png" alt="hero img" class="lg:ml-auto mx-auto lg:w-11/12 w-4/5">
+                         </div>
+                    </div>
+               </div>
+          </section>
+          <!-- OFFERS -->
+          <section class="lg:py-20 sm:py-12 py-8 bg-[#f6f6f6]">
+               <div class="x-container">
+                    <h2 class="font-semibold md:text-3xl sm:text-2xl text-xl text-center md:mb-9 mb-6">Why Choose <span class="font-caveat sm:text-3xl text-2xl text-violet-900">Us</span></h2>
+                    <div class="grid md:grid-cols-4 sm:grid-cols-2 lg:gap-4 gap-2.5 gap-y-4">
+                         <div class="text-center">
+                              <svg class="fill-violet-900 sm:w-12 w-9 sm:h-12 h-9 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                                   <path
+                                        d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192l42.7 0c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0L21.3 320C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7l42.7 0C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3l-213.3 0zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352l117.3 0C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7l-330.7 0c-14.7 0-26.7-11.9-26.7-26.7z" />
+                              </svg>
+                              <h3 class="font-semibold">Exclusive Leads</h3>
+                              <p>Your leads, your deals. No sharing, just winning.</p>
+                         </div>
+                         <div class="text-center">
+                              <svg class="stroke-violet-900 sm:w-12 w-9 sm:h-12 h-9 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
+                                   stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check">
+                                   <path
+                                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                                   <path d="m9 12 2 2 4-4" />
+                              </svg>
+                              <h3 class="font-semibold">Advanced Verification </h3>
+                              <p>Only the best, verified and ready-to-go leads.</p>
+                         </div>
+                         <div class="text-center">
+                              <svg class="stroke-violet-900 sm:w-12 w-9 sm:h-12 h-9 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"
+                                   stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake">
+                                   <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+                                   <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+                                   <path d="m21 3 1 11h-2" />
+                                   <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+                                   <path d="M3 4h8" />
+                              </svg>
+                              <h3 class="font-semibold">Customized Solutions</h3>
+                              <p>Tailor-made strategies just for you.</p>
+                         </div>
+                         <div class="text-center">
+                              <svg class="fill-violet-900 sm:w-12 w-9 sm:h-12 h-9 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                   <path
+                                        d="M256 48C141.1 48 48 141.1 48 256l0 40c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-40C0 114.6 114.6 0 256 0S512 114.6 512 256l0 144.1c0 48.6-39.4 88-88.1 88L313.6 488c-8.3 14.3-23.8 24-41.6 24l-32 0c-26.5 0-48-21.5-48-48s21.5-48 48-48l32 0c17.8 0 33.3 9.7 41.6 24l110.4 .1c22.1 0 40-17.9 40-40L464 256c0-114.9-93.1-208-208-208zM144 208l16 0c17.7 0 32 14.3 32 32l0 112c0 17.7-14.3 32-32 32l-16 0c-35.3 0-64-28.7-64-64l0-48c0-35.3 28.7-64 64-64zm224 0c35.3 0 64 28.7 64 64l0 48c0 35.3-28.7 64-64 64l-16 0c-17.7 0-32-14.3-32-32l0-112c0-17.7 14.3-32 32-32l16 0z" />
+                              </svg>
+                              <h3 class="font-semibold">Dedicated Support</h3>
+                              <p>We’re with you from the first hello to the final signature.</p>
+                         </div>
+                    </div>
+               </div>
+          </section>
+          <!-- COUNTER -->
+          <section class="lg:py-20 sm:py-12 py-8 bg-top bg-cover bg-no-repeat" style="background-image: url(assets/img/banner/banner-2.jpg);">
+               <div class="x-container text-center">
+                    <h2 class="font-semibold md:text-3xl sm:text-2xl text-xl md:my-6 my-2.5">Real <span class="font-caveat sm:text-3xl text-2xl text-violet-900">Connections,</span> Real <span
+                              class="font-caveat sm:text-3xl text-2xl text-violet-900">Clients</span></h2>
+                    <p>At cliQclose, we take quality seriously. Our team works hard to make sure every lead we generate is accurate and relevant to your needs. We’re always refining our methods to
+                         keep up with industry best practices. With CliqClose, you can trust that the leads you receive are high-quality and ready to take the next step in their real estate journey.
+                    </p>
+                    <div class="grid sm:grid-cols-3 gap-4 md:mt-9 sm:mt-6 mt-4">
+                         <div>
+                              <h3 class="font-bold text-violet-900 lg:text-6xl md:text-5xl text-4xl">96%</h3>
+                              <span>Lead acceptance ratio</span>
+                         </div>
+                         <div>
+                              <h3 class="font-bold text-violet-900 lg:text-6xl md:text-5xl text-4xl">105,000</h3>
+                              <span>Quality prospects generated</span>
+                         </div>
+                         <div>
+                              <h3 class="font-bold text-violet-900 lg:text-6xl md:text-5xl text-4xl">1,500 +</h3>
+                              <span>Happy Clients</span>
+                         </div>
+                    </div>
+               </div>
+          </section>
+
+     </main>
      <!-- FOOTER -->
      <footer class="bg-neutral-100 border-t-4 border-zinc-200 border-dashed sm:text-base text-sm md:py-12 sm:py-8 py-5">
           <div class="x-container">
@@ -58,7 +147,7 @@
                          <p>We’re here to help you grow your real estate business. Reach out today to learn more about our services and how we can assist you in achieving your goals.</p>
                     </div>
                     <div>
-                         <h3 class="sm:text-lg text-base text-neutral-800 font-medium sm:mb-2 mb-1">Navigation</h3>
+                         <h3 class="sm:text-lg text-base font-medium sm:mb-2 mb-1">Navigation</h3>
                          <ul class="text-violet-900 sm:space-y-1 space-y-0.5">
                               <li><a href="realtors.html" class="hover:opacity-50 hover:underline">Realtors</a></li>
                               <li><a href="plans.html" class="hover:opacity-50 hover:underline">Plans</a></li>
@@ -67,7 +156,7 @@
                          </ul>
                     </div>
                     <div class="md:col-span-2">
-                         <h3 class="sm:text-lg text-base text-neutral-800 font-medium sm:mb-2 mb-1">Contact Info</h3>
+                         <h3 class="sm:text-lg text-base font-medium sm:mb-2 mb-1">Contact Info</h3>
                          <ul class="sm:space-y-2 space-y-1">
                               <li><a href="mailto:info@cliqclose.com" class="hover:opacity-50 hover:underline">info@cliqclose.com</a></li>
                               <li><a href="tel:(406)%20316-0699" class="hover:opacity-50 hover:underline">(406) 316-0699 (9 am - 5 pm MST)</a></li>
