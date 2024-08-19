@@ -34,7 +34,7 @@
   }
 
   img {
-    @apply w-full align-middle;
+    @apply w-fit align-middle;
   }
 
   input,

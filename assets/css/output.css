@@ -471,7 +471,8 @@ a,
 }
 
 img {
-  width: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
   vertical-align: middle;
 }
 
@@ -791,52 +792,20 @@ a,
   height: 3rem;
 }
 
-.h-6 {
-  height: 1.5rem;
-}
-
-.h-9 {
-  height: 2.25rem;
-}
-
-.h-24 {
-  height: 6rem;
-}
-
-.h-20 {
-  height: 5rem;
-}
-
-.h-16 {
-  height: 4rem;
-}
-
-.h-10 {
-  height: 2.5rem;
-}
-
-.h-8 {
-  height: 2rem;
-}
-
-.h-7 {
-  height: 1.75rem;
-}
-
-.h-4 {
-  height: 1rem;
+.h-2\.5 {
+  height: 0.625rem;
 }
 
 .h-5 {
   height: 1.25rem;
 }
 
-.h-3 {
-  height: 0.75rem;
+.h-6 {
+  height: 1.5rem;
 }
 
-.h-2\.5 {
-  height: 0.625rem;
+.h-9 {
+  height: 2.25rem;
 }
 
 .max-h-0 {
@@ -867,37 +836,12 @@ a,
   width: 100%;
 }
 
-.w-20 {
-  width: 5rem;
-}
-
-.w-40 {
-  width: 10rem;
-}
-
-.w-32 {
-  width: 8rem;
-}
-
-.w-24 {
-  width: 6rem;
-}
-
-.w-fit {
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
 .grow {
   flex-grow: 1;
 }
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.grid-cols-6 {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -930,30 +874,6 @@ a,
 
 .gap-4 {
   gap: 1rem;
-}
-
-.gap-9 {
-  gap: 2.25rem;
-}
-
-.gap-20 {
-  gap: 5rem;
-}
-
-.gap-24 {
-  gap: 6rem;
-}
-
-.gap-12 {
-  gap: 3rem;
-}
-
-.gap-6 {
-  gap: 1.5rem;
-}
-
-.gap-5 {
-  gap: 1.25rem;
 }
 
 .gap-y-4 {
@@ -1159,16 +1079,8 @@ a,
   opacity: 1;
 }
 
-.opacity-75 {
-  opacity: 0.75;
-}
-
 .opacity-80 {
   opacity: 0.8;
-}
-
-.opacity-85 {
-  opacity: 0.85;
 }
 
 .x-shadow {
@@ -1198,12 +1110,12 @@ a,
   text-decoration-line: underline;
 }
 
-.hover\:opacity-50:hover {
-  opacity: 0.5;
-}
-
 .hover\:opacity-100:hover {
   opacity: 1;
+}
+
+.hover\:opacity-50:hover {
+  opacity: 0.5;
 }
 
 @media (min-width: 640px) {
@@ -1223,16 +1135,16 @@ a,
     height: 3rem;
   }
 
+  .sm\:h-5 {
+    height: 1.25rem;
+  }
+
   .sm\:h-8 {
     height: 2rem;
   }
 
   .sm\:h-9 {
     height: 2.25rem;
-  }
-
-  .sm\:h-5 {
-    height: 1.25rem;
   }
 
   .sm\:w-12 {
@@ -1243,20 +1155,12 @@ a,
     width: 2rem;
   }
 
-  .sm\:w-auto {
-    width: auto;
-  }
-
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .sm\:flex-row {
-    flex-direction: row;
   }
 
   .sm\:gap-4 {
@@ -1358,12 +1262,12 @@ a,
     display: none;
   }
 
-  .md\:h-16 {
-    height: 4rem;
-  }
-
   .md\:h-12 {
     height: 3rem;
+  }
+
+  .md\:h-16 {
+    height: 4rem;
   }
 
   .md\:h-7 {
@@ -1465,16 +1369,16 @@ a,
     width: 91.666667%;
   }
 
+  .lg\:gap-20 {
+    gap: 5rem;
+  }
+
   .lg\:gap-4 {
     gap: 1rem;
   }
 
   .lg\:gap-6 {
     gap: 1.5rem;
-  }
-
-  .lg\:gap-20 {
-    gap: 5rem;
   }
 
   .lg\:p-5 {
