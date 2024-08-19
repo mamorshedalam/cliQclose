@@ -13,6 +13,8 @@
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Sofia+Sans:wght@1..1000&display=swap" rel="stylesheet">
+     <!-- SWIPER CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
      <!-- TAILWIND CSS -->
      <link href="./assets/css/output.css" rel="stylesheet">
      <!-- ALPINE JS -->
@@ -49,7 +51,7 @@
           </div>
      </header>
      <!-- MAIN -->
-     <main class="">
+     <main>
           <!-- HERO -->
           <section class="xl:py-40 md:py-32 sm:py-24 py-20 bg-bottom bg-cover bg-no-repeat" style="background-image: url(assets/img/banner/banner-1.jpg);">
                <div class="x-container">
@@ -69,7 +71,9 @@
           <!-- OFFERS -->
           <section class="lg:py-20 sm:py-12 py-8 bg-[#f6f6f6]">
                <div class="x-container">
-                    <h2 class="font-semibold md:text-3xl sm:text-2xl text-xl text-center md:mb-9 mb-6">Why Choose <span class="font-caveat sm:text-3xl text-2xl text-violet-900">Us</span></h2>
+                    <div class="x-title">
+                         <h2>Why Choose <span>Us</span></h2>
+                    </div>
                     <div class="grid md:grid-cols-4 sm:grid-cols-2 lg:gap-4 gap-2.5 gap-y-4">
                          <div class="text-center">
                               <svg class="fill-violet-900 sm:w-12 w-9 sm:h-12 h-9 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
@@ -112,10 +116,12 @@
                     </div>
                </div>
           </section>
-          <!-- REVIEWS -->
+          <!-- CLIENTS -->
           <section class="lg:py-20 sm:py-12 py-8 bg-top bg-cover bg-no-repeat" style="background-image: url(assets/img/banner/banner-2.jpg);">
                <div class="x-container text-center">
-                    <h2 class="font-semibold md:text-3xl sm:text-2xl text-xl md:my-6 my-2.5">Trusted <span class="font-caveat sm:text-3xl text-2xl text-violet-900">By</span></h2>
+                    <div class="x-title md:mt-6 mt-3">
+                         <h2>Trusted <span>By</span></h2>
+                    </div>
                     <div class="flex flex-wrap items-center justify-center xl:gap-24 lg:gap-20 md:gap-12 sm:gap-9 gap-4">
                          <div class="cursor-pointer opacity-80 hover:opacity-100 x-animation">
                               <img class="x-img-filter md:h-12 sm:h-9 h-5" src="assets/img/client/1-2.png" alt="kw">
@@ -135,11 +141,14 @@
           <!-- COUNTER -->
           <section class="lg:py-20 sm:py-12 py-8 bg-top bg-cover bg-no-repeat" style="background-image: url(assets/img/banner/banner-3.jpeg);">
                <div class="x-container text-center">
-                    <h2 class="font-semibold md:text-3xl sm:text-2xl text-xl md:my-5 my-2">Real <span class="font-caveat sm:text-3xl text-2xl text-violet-900">Connections,</span> Real <span
-                              class="font-caveat sm:text-3xl text-2xl text-violet-900">Clients</span></h2>
-                    <p>At cliQclose, we take quality seriously. Our team works hard to make sure every lead we generate is accurate and relevant to your needs. We’re always refining our methods to
-                         keep up with industry best practices. With CliqClose, you can trust that the leads you receive are high-quality and ready to take the next step in their real estate journey.
-                    </p>
+                    <div class="x-title md:mt-6 mt-3">
+                         <h2>Real <span>Connections,</span> Real <span>Clients</span></h2>
+                         <p>At cliQclose, we take quality seriously. Our team works hard to make sure every lead we generate is accurate and relevant to your needs. We’re always refining our methods
+                              to
+                              keep up with industry best practices. With CliqClose, you can trust that the leads you receive are high-quality and ready to take the next step in their real estate
+                              journey.
+                         </p>
+                    </div>
                     <div class="grid sm:grid-cols-3 gap-4 md:mt-9 sm:mt-6 mt-4 sm:text-lg">
                          <div>
                               <h3 class="font-bold text-violet-900 lg:text-6xl md:text-5xl text-4xl">96%</h3>
@@ -159,7 +168,9 @@
           <!-- SERVICE -->
           <section class="lg:py-20 sm:py-12 py-8">
                <div class="x-container">
-                    <h2 class="font-semibold md:text-3xl sm:text-2xl text-xl text-center md:mb-9 mb-6">Service We <span class="font-caveat sm:text-3xl text-2xl text-violet-900">Offers</span></h2>
+                    <div class="x-title">
+                         <h2>Service We <span>Offers</span></h2>
+                    </div>
                     <div class="flex flex-wrap justify-center">
                          <div class="lg:w-1/3 sm:w-1/2 w-full lg:px-3 sm:px-2 lg:mb-6 mb-4">
                               <div class="flex flex-col h-full bg-white cursor-pointer rounded-lg hover:drop-shadow hover:-translate-y-1 x-animation">
@@ -216,6 +227,205 @@
                                    </div>
                               </div>
                          </div>
+                    </div>
+               </div>
+          </section>
+          <!-- REVIEWS -->
+          <section class="lg:py-20 sm:py-12 py-8 bg-top bg-cover bg-no-repeat" style="background-image: url(assets/img/banner/banner-4.jpg);">
+               <div class="x-container">
+                    <div class="x-title">
+                         <h2>What Our Client <span>Says</span></h2>
+                    </div>
+                    <div class="swiper reviewSlider">
+                         <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                   <div class="text-center md:space-y-4 space-y-2">
+                                        <img class="md:w-40 w-28 md:h-40 h-28 mx-auto rounded-full object-top object-cover" src="assets/img/review/Team_img-1-2-1.jpeg" alt="client profile image">
+                                        <blockquote>“CliqClose has been a game changer for my business. Their lead generation system is incredibly efficient and has brought me a steady stream of
+                                             high-quality
+                                             clients. I can't recommend them enough!”</blockquote>
+                                        <div>
+                                             <h3 class="font-caveat font-medium md:text-xl text-lg">— John Anderson</h3>
+                                             <h4 class="font-medium text-neutral-600 md:text-sm text-xs">Keller Williams Realty</h4>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="swiper-slide">
+                                   <div class="text-center md:space-y-4 space-y-2">
+                                        <img class="md:w-40 w-28 md:h-40 h-28 mx-auto rounded-full object-top object-cover" src="assets/img/review/Team_img-2-2.jpeg" alt="client profile image">
+                                        <blockquote>“I've tried several lead generation services over the years, but none have matched the results I've seen with CliqClose. Their team is responsive,
+                                             and their leads are consistently top-notch. It's been a huge boost for my real estate career.”</blockquote>
+                                        <div>
+                                             <h3 class="font-caveat font-medium md:text-xl text-lg">— Sarah Thompson</h3>
+                                             <h4 class="font-medium text-neutral-600 md:text-sm text-xs">RE/MAX</h4>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="swiper-slide">
+                                   <div class="text-center md:space-y-4 space-y-2">
+                                        <img class="md:w-40 w-28 md:h-40 h-28 mx-auto rounded-full object-top object-cover" src="assets/img/review/Team_img-4-2.jpeg" alt="client profile image">
+                                        <blockquote>“Cliqclose has been a game-changer for my business. Their lead generation service consistently provides high-quality leads that convert into
+                                             clients. I've seen a significant increase in my sales and couldn't be happier with the results. Highly recommend!”</blockquote>
+                                        <div>
+                                             <h3 class="font-caveat font-medium md:text-xl text-lg">— Emily Johnson</h3>
+                                             <h4 class="font-medium text-neutral-600 md:text-sm text-xs">Keller Williams Realty</h4>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="swiper-slide">
+                                   <div class="text-center md:space-y-4 space-y-2">
+                                        <img class="md:w-40 w-28 md:h-40 h-28 mx-auto rounded-full object-top object-cover" src="assets/img/review/Team_img-3-1.jpeg" alt="client profile image">
+                                        <blockquote>“CliqClose has been instrumental in growing my client base. The quality of the leads is outstanding, and their customer service is exceptional. They
+                                             truly understand the needs of real estate professionals.”</blockquote>
+                                        <div>
+                                             <h3 class="font-caveat font-medium md:text-xl text-lg">— Michael Rodriguez</h3>
+                                             <h4 class="font-medium text-neutral-600 md:text-sm text-xs">Century 21</h4>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="swiper-slide">
+                                   <div class="text-center md:space-y-4 space-y-2">
+                                        <img class="md:w-40 w-28 md:h-40 h-28 mx-auto rounded-full object-top object-cover" src="assets/img/review/Group-885-1.png" alt="client profile image">
+                                        <blockquote>“I've tried several lead generation services, but Cliqclose stands out from the rest. The quality and quantity of leads I receive are unmatched.
+                                             It's clear they understand the real estate market and know how to connect us with serious buyers and sellers. My business has grown significantly thanks to
+                                             Cliqclose.”</blockquote>
+                                        <div>
+                                             <h3 class="font-caveat font-medium md:text-xl text-lg">— Sarah Patel</h3>
+                                             <h4 class="font-medium text-neutral-600 md:text-sm text-xs">Coldwell Banker</h4>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </section>
+          <!-- FAQ -->
+          <section class="lg:py-20 sm:py-12 py-8">
+               <div class="x-container">
+                    <div class="x-title">
+                         <h2>Frequently Asked <span>Questions</span></h2>
+                         <p>Find answers to common questions about CliqClose, your trusted source for high-quality real estate leads and seamless transaction management.</p>
+                    </div>
+                    <div class="bg-white border border-zinc-200 x-shadow rounded-lg md:px-6 px-3 md:py-4 py-2 lg:mb-6 sm:mb-4 mb-2.5" x-data="{active:false}">
+                         <div @click="active=!active" :class="active?'border-b':''" class="flex justify-between items-center border-zinc-200 pb-1 cursor-pointer">
+                              <h3 class="font-medium md:text-lg text-base">What services does cliQclose offer?</h3>
+                              <button>
+                                   <svg :class="active?'rotate-45':''" class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path
+                                             d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
+                                   </svg>
+                              </button>
+                         </div>
+                         <p x-show="active" x-transition class="md:pt-4 pt-2">We offer comprehensive lead generation, advanced lead verification, exclusive leads, digital marketing services, and agent
+                              support
+                              services.
+                              Our services are
+                              designed to
+                              help real estate professionals close deals faster and more efficiently.</p>
+                    </div>
+                    <div class="bg-white border border-zinc-200 x-shadow rounded-lg md:px-6 px-3 md:py-4 py-2 lg:mb-6 sm:mb-4 mb-2.5" x-data="{active:false}">
+                         <div @click="active=!active" :class="active?'border-b':''" class="flex justify-between items-center border-zinc-200 pb-1 cursor-pointer">
+                              <h3 class="font-medium md:text-lg text-base">How does cliQclose verify leads?</h3>
+                              <button>
+                                   <svg :class="active?'rotate-45':''" class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path
+                                             d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
+                                   </svg>
+                              </button>
+                         </div>
+                         <p x-show="active" x-transition class="md:pt-4 pt-2">Our verification process includes validating contact details, confirming consent, checking prequalification status, and
+                              verifying budget and property type. This ensures that each lead is genuinely interested and ready to engage.</p>
+                    </div>
+                    <div class="bg-white border border-zinc-200 x-shadow rounded-lg md:px-6 px-3 md:py-4 py-2 lg:mb-6 sm:mb-4 mb-2.5" x-data="{active:false}">
+                         <div @click="active=!active" :class="active?'border-b':''" class="flex justify-between items-center border-zinc-200 pb-1 cursor-pointer">
+                              <h3 class="font-medium md:text-lg text-base">What makes cliQclose leads unique?</h3>
+                              <button>
+                                   <svg :class="active?'rotate-45':''" class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path
+                                             d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
+                                   </svg>
+                              </button>
+                         </div>
+                         <p x-show="active" x-transition class="md:pt-4 pt-2">Our leads are exclusive, meaning they are not shared with other agents. We also use a rigorous verification process to
+                              ensure each lead is accurate, relevant, and ready to engage.</p>
+                    </div>
+                    <div class="bg-white border border-zinc-200 x-shadow rounded-lg md:px-6 px-3 md:py-4 py-2 lg:mb-6 sm:mb-4 mb-2.5" x-data="{active:false}">
+                         <div @click="active=!active" :class="active?'border-b':''" class="flex justify-between items-center border-zinc-200 pb-1 cursor-pointer">
+                              <h3 class="font-medium md:text-lg text-base">How does cliQclose verify leads?</h3>
+                              <button>
+                                   <svg :class="active?'rotate-45':''" class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path
+                                             d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
+                                   </svg>
+                              </button>
+                         </div>
+                         <p x-show="active" x-transition class="md:pt-4 pt-2">Our verification process includes validating contact details, confirming consent, checking prequalification status, and
+                              verifying budget and property type. This ensures that each lead is genuinely interested and ready to engage.</p>
+                    </div>
+                    <div class="bg-white border border-zinc-200 x-shadow rounded-lg md:px-6 px-3 md:py-4 py-2 lg:mb-6 sm:mb-4 mb-2.5" x-data="{active:false}">
+                         <div @click="active=!active" :class="active?'border-b':''" class="flex justify-between items-center border-zinc-200 pb-1 cursor-pointer">
+                              <h3 class="font-medium md:text-lg text-base">Can I customize the services I receive from cliQclose?</h3>
+                              <button>
+                                   <svg :class="active?'rotate-45':''" class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path
+                                             d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
+                                   </svg>
+                              </button>
+                         </div>
+                         <p x-show="active" x-transition class="md:pt-4 pt-2">Yes, we offer customized solutions tailored to fit your unique needs, ensuring maximum efficiency and effectiveness in
+                              your lead generation efforts.</p>
+                    </div>
+                    <div class="bg-white border border-zinc-200 x-shadow rounded-lg md:px-6 px-3 md:py-4 py-2 lg:mb-6 sm:mb-4 mb-2.5" x-data="{active:false}">
+                         <div @click="active=!active" :class="active?'border-b':''" class="flex justify-between items-center border-zinc-200 pb-1 cursor-pointer">
+                              <h3 class="font-medium md:text-lg text-base">How can I get in touch with cliQclose?</h3>
+                              <button>
+                                   <svg :class="active?'rotate-45':''" class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path
+                                             d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
+                                   </svg>
+                              </button>
+                         </div>
+                         <p x-show="active" x-transition class="md:pt-4 pt-2">You can contact us via phone at (123) 456-7890, email at support@cliqclose.com, or visit our office at 123 Main Street,
+                              Anytown, USA 12345. Our business hours are Mon-Fri: 9:00 AM – 6:00 PM MST, with 24/7 online support.</p>
+                    </div>
+                    <div class="bg-white border border-zinc-200 x-shadow rounded-lg md:px-6 px-3 md:py-4 py-2 lg:mb-6 sm:mb-4 mb-2.5" x-data="{active:false}">
+                         <div @click="active=!active" :class="active?'border-b':''" class="flex justify-between items-center border-zinc-200 pb-1 cursor-pointer">
+                              <h3 class="font-medium md:text-lg text-base">How does cliQclose handle my personal information?</h3>
+                              <button>
+                                   <svg :class="active?'rotate-45':''" class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path
+                                             d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
+                                   </svg>
+                              </button>
+                         </div>
+                         <p x-show="active" x-transition class="md:pt-4 pt-2">We are committed to protecting your privacy. We collect and use personal information to provide and improve our services.
+                              We do not sell or rent your personal information to third parties. For more details, please refer to our Privacy Policy.</p>
+                    </div>
+                    <div class="bg-white border border-zinc-200 x-shadow rounded-lg md:px-6 px-3 md:py-4 py-2 lg:mb-6 sm:mb-4 mb-2.5" x-data="{active:false}">
+                         <div @click="active=!active" :class="active?'border-b':''" class="flex justify-between items-center border-zinc-200 pb-1 cursor-pointer">
+                              <h3 class="font-medium md:text-lg text-base">How does the lead distribution system work?</h3>
+                              <button>
+                                   <svg :class="active?'rotate-45':''" class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path
+                                             d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
+                                   </svg>
+                              </button>
+                         </div>
+                         <p x-show="active" x-transition class="md:pt-4 pt-2">Leads are distributed using a fair and efficient system. You receive notifications via text and email and can decline
+                              leads that don’t match your criteria.</p>
+                    </div>
+                    <div class="bg-white border border-zinc-200 x-shadow rounded-lg md:px-6 px-3 md:py-4 py-2 lg:mb-6 sm:mb-4 mb-2.5" x-data="{active:false}">
+                         <div @click="active=!active" :class="active?'border-b':''" class="flex justify-between items-center border-zinc-200 pb-1 cursor-pointer">
+                              <h3 class="font-medium md:text-lg text-base">Can I choose the area where I want to work?</h3>
+                              <button>
+                                   <svg :class="active?'rotate-45':''" class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                        <path
+                                             d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
+                                   </svg>
+                              </button>
+                         </div>
+                         <p x-show="active" x-transition class="md:pt-4 pt-2">Yes, cliQclose allows you to choose the specific area you want to work in, providing more control over your lead
+                              generation process.</p>
                     </div>
                </div>
           </section>
@@ -276,6 +486,27 @@
                </div>
           </div>
      </footer>
+
+     <!-- SCRIPT -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+     <script>
+          var swiper = new Swiper(".reviewSlider", {
+               loop: true,
+               slidesPerView: 1,
+               autoplay: true,
+               autoplaySpeed: 3000,
+               breakpoints: {
+                    768: {
+                         slidesPerView: 2,
+                         spaceBetween: 24
+                    },
+                    1024: {
+                         slidesPerView: 3,
+                         spaceBetween: 32
+                    },
+               },
+          })
+     </script>
 </body>
 
 </html>
