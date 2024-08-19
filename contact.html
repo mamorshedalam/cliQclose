@@ -49,8 +49,48 @@
           </div>
      </header>
      <!-- MAIN -->
-     <main>
-
+     <main class="x-container">
+          <div class="xl:py-40 md:py-32 sm:py-24 py-20 flex flex-wrap">
+               <section class="w-full md:!text-left x-title">
+                    <h2>Let's <span>Talk</span></h2>
+               </section>
+               <section class="md:w-1/2 w-full md:mb-0 mb-6">
+                    <form>
+                         <div class="flex flex-col gap-2 md:mb-4 mb-2">
+                              <label for="name" class="md:text-lg text-base">Full Name <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="name" name="name" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="flex flex-col gap-2 md:mb-4 mb-2">
+                              <label for="mail" class="md:text-lg text-base">Email <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="mail" name="mail" type="email" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="flex flex-col gap-2 md:mb-4 mb-2">
+                              <label for="phone" class="md:text-lg text-base">Phone <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="phone" name="phone" type="tel" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="flex flex-col gap-2 md:mb-4 mb-2">
+                              <label for="serviceType" class="md:text-lg text-base">What Kind of Service You Need <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <select id="serviceType" name="serviceType" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                                   <option value="">For Realtors</option>
+                                   <option value="buy&sell">For Buyers and sellers</option>
+                                   <option value="marketing">For Marketing</option>
+                              </select>
+                         </div>
+                         <div class="flex flex-col gap-2 md:mb-4 mb-2">
+                              <label for="message" class="md:text-lg text-base">Tell us <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <textarea id="message" name="message" type="tel" class="bg-neutral-100 text-neutral-900 border border-zinc-200 md:h-40 h-28 sm:p-2.5 p-1.5 rounded-lg"></textarea>
+                         </div>
+                         <div class="md:mb-4 mb-2">
+                              <p class="text-neutral-400 md:text-sm text-xs">By submitting this form , you hereby acknowledge and agree to the terms and conditions, as well as your privacy policy.
+                                   Please be aware that we may collect and utilize your personal information as outlined in our privacy policy.</label>
+                         </div>
+                         <button class="x-btn w-full">Submit</button>
+                    </form>
+               </section>
+               <section class="md:w-1/2 w-full xl:pl-40 lg:pl-20 md:pl-9">
+                    <p>We’re here to help you grow your real estate business. Reach out today to learn more about our services and how we can assist you in achieving your goals.</p>
+               </section>
+          </div>
      </main>
      <!-- FOOTER -->
      <footer class="bg-neutral-100 border-t-4 border-zinc-200 border-dashed md:py-12 sm:py-8 py-5">

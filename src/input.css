@@ -52,7 +52,7 @@
   input,
   select,
   textarea {
-    @apply outline-none bg-transparent;
+    @apply outline-none bg-transparent focus:outline-none;
   }
 
   h1,
