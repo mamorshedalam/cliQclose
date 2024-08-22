@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- TITLE & FAVICON -->
+     <link rel="icon" href="./assets/img/icon.png" />
+     <title>Agent Registration | cliQclose</title>
+
+     <!-- GOOGLE FONTS -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Sofia+Sans:wght@1..1000&display=swap" rel="stylesheet">
+     <!-- TAILWIND CSS -->
+     <link href="./assets/css/output.css" rel="stylesheet">
+     <!-- ALPINE JS -->
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body x-cloak x-data="{shadowActive:false}" @scroll.window="shadowActive = window.pageYOffset > 50">
+     <!-- HEADER -->
+     <header class="fixed top-0 left-0 w-full z-[999] md:p-4 p-2" x-cloak x-data="{sidebar:false}">
+          <div :class="shadowActive? 'x-shadow bg-white':''" class="x-container rounded-xl">
+               <div class="flex flex-wrap items-center justify-between py-2.5">
+                    <div>
+                         <a href="index.html"><img src="assets/img/logo.png" alt="logo" class="lg:h-14 sm:h-12 h-9"></a>
+                    </div>
+                    <div :class="sidebar?'opacity-100 visible max-h-80 left-2 rounded-xl x-shadow bg-white':'opacity-0 invisible max-h-0'"
+                         class="md:relative absolute top-full md:left-0 md:w-fit w-[calc(100%-1rem)] md:opacity-100 md:visible md:max-h-fit md:pb-0 pb-4 x-animation">
+                         <ul class="flex md:flex-row flex-col text-center sm:text-lg font-semibold text-zinc-800">
+                              <li><a href="about.html" class="lg:p-5 md:p-4 p-1 hover:text-violet-900">About</a></li>
+                              <li><a href="realtors.html" class="lg:p-5 md:p-4 p-1 hover:text-violet-900">Realtors</a></li>
+                              <li><a href="plans.html" class="lg:p-5 md:p-4 p-1 hover:text-violet-900">Plans</a></li>
+                              <li><a href="buyers-sellers.html" class="lg:p-5 md:p-4 p-1 hover:text-violet-900">Buyers and Sellers</a></li>
+                         </ul>
+                    </div>
+                    <div class="flex items-center gap-4">
+                         <a href="contact.html" class="x-btn">Let's talk</a>
+                         <button @click="sidebar=!sidebar" class="md:hidden block">
+                              <svg class="fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                   <path
+                                        d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+                              </svg>
+                         </button>
+                    </div>
+               </div>
+          </div>
+     </header>
+     <!-- MAIN -->
+     <main>
+          <!-- BUYER -->
+          <section class="xl:pt-40 md:pt-32 sm:pt-24 pt-20 lg:pb-20 sm:pb-12 pb-8">
+               <div class="x-container">
+                    <div class="x-title max-w-3xl mx-auto">
+                         <h2>Agent <span>Registration</span></h2>
+                         <p>Welcome to cliQclose, We cant wait to get you started, Please fill out the following information.</p>
+                    </div>
+                    <form class="grid grid-cols-6 sm:gap-4 gap-2">
+                         <div class="col-span-6">
+                              <h3 class="md:text-lg text-base font-semibold">Personal Information:</h3>
+                         </div>
+                         <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
+                              <label for="agentFirstName" class="md:text-lg text-base">First Name <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="agentFirstName" name="agentFirstName" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
+                              <label for="agentLastName" class="md:text-lg text-base">Last Name <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="agentLastName" name="agentLastName" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
+                              <label for="agentMail" class="md:text-lg text-base">Email <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="agentMail" name="agentMail" type="email" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
+                              <label for="agentPhone" class="md:text-lg text-base">Phone <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="agentPhone" name="agentPhone" type="tel" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="col-span-6 flex flex-col justify-between gap-2">
+                              <label for="agentAddress" class="md:text-lg text-base">Address <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="agentAddress" name="agentAddress" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="col-span-6">
+                              <h3 class="md:text-lg text-base font-semibold">Professional Details:</h3>
+                         </div>
+                         <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
+                              <label for="agentLicense" class="md:text-lg text-base">License Number <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="agentLicense" name="agentLicense" type="tel" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
+                              <label for="agentMsl" class="md:text-lg text-base">MSL ID <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="agentMsl" name="agentMsl" type="tel" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="col-span-6 flex flex-col justify-between gap-2">
+                              <label for="agentBrokerage" class="md:text-lg text-base">Brokerage Name <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="agentBrokerage" name="agentBrokerage" type="tel" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="col-span-6">
+                              <h3 class="md:text-lg text-base font-semibold">Location Preferences:</h3>
+                         </div>
+                         <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
+                              <label for="agentStateWork" class="md:text-lg text-base">Primary State of Work <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="agentStateWork" name="agentStateWork" type="tel" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
+                              <label for="agentCountry" class="md:text-lg text-base">Primary County <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="agentCountry" name="agentCountry" type="tel" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
+                              <label for="agentRadius" class="md:text-lg text-base">Service Radius (in miles) <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <select id="buyerMultiState" name="buyerMultiState" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                                   <option value="15">Up to 15 miles</option>
+                                   <option value="20">Up to 20 miles</option>
+                                   <option value="30">Up to 30 miles</option>
+                                   <option value="40">Up to 40 miles</option>
+                                   <option value="50">Up to 50 miles</option>
+                                   <option value="60">Up to 60 miles</option>
+                              </select>
+                         </div>
+                         <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
+                              <label for="buyerMultiState" class="md:text-lg text-base">Do you work in multiple states? <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <span class="text-neutral-400 text-sm block">If yes, please name the states:</span>
+                              <select id="buyerMultiState" name="buyerMultiState" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                                   <option value="true">Yes</option>
+                                   <option value="false">No</option>
+                              </select>
+                         </div>
+                         <div class="col-span-6 flex flex-col justify-between gap-2">
+                              <label for="agentZipCode" class="md:text-lg text-base">Preferred Zip Codes <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <input id="agentZipCode" name="agentZipCode" type="tel" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                         </div>
+                         <div class="col-span-6">
+                              <h3 class="md:text-lg text-base font-semibold">Additional Information:</h3>
+                         </div>
+                         <div class="lg:col-span-2 sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
+                              <label for="buyerHandleRental" class="md:text-lg text-base">Do you handle rentals <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <select id="buyerHandleRental" name="buyerHandleRental" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                                   <option value="true">Yes</option>
+                                   <option value="false">No</option>
+                              </select>
+                         </div>                         
+                         <div class="lg:col-span-2 sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
+                              <label for="buyerTeam" class="md:text-lg text-base">Are you in a team <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <select id="buyerTeam" name="buyerTeam" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                                   <option value="true">Yes</option>
+                                   <option value="false">No</option>
+                              </select>
+                         </div>                         
+                         <div class="lg:col-span-2 sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
+                              <label for="buyerBefore" class="md:text-lg text-base">Have you used other lead generation company before <span class="text-neutral-400 text-sm">(required)</span></label>
+                              <select id="buyerBefore" name="buyerBefore" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                                   <option value="true">Yes</option>
+                                   <option value="false">No</option>
+                              </select>
+                         </div>                         
+                         <div class="col-span-6"><button class="x-btn md:w-fit w-full">Submit</button></div>
+                    </form>
+               </div>
+          </section>
+     </main>
+     <!-- FOOTER -->
+     <footer class="bg-neutral-100 border-t-4 border-zinc-200 border-dashed md:py-12 sm:py-8 py-5">
+          <div class="x-container">
+               <div class="grid md:grid-cols-5 sm:grid-cols-2 lg:gap-6 sm:gap-4 gap-2.5">
+                    <div class="sm:col-span-2">
+                         <a href="index.html"><img src="assets/img/logo.png" alt="logo" class="md:h-16 h-12"></a>
+                         <p>We’re here to help you grow your real estate business. Reach out today to learn more about our services and how we can assist you in achieving your goals.</p>
+                    </div>
+                    <div>
+                         <h3 class="sm:text-lg text-base font-medium sm:mb-2 mb-1">Navigation</h3>
+                         <ul class="text-violet-900 sm:space-y-1 space-y-0.5">
+                              <li><a href="realtors.html" class="hover:opacity-50 hover:underline">Realtors</a></li>
+                              <li><a href="plans.html" class="hover:opacity-50 hover:underline">Plans</a></li>
+                              <li><a href="buyers-sellers.html" class="hover:opacity-50 hover:underline">Buyers and Sellers</a></li>
+                              <li><a href="about.html" class="hover:opacity-50 hover:underline">About</a></li>
+                         </ul>
+                    </div>
+                    <div class="md:col-span-2">
+                         <h3 class="sm:text-lg text-base font-medium sm:mb-2 mb-1">Contact Info</h3>
+                         <ul class="sm:space-y-2 space-y-1">
+                              <li><a href="mailto:info@cliqclose.com" class="hover:opacity-50 hover:underline">info@cliqclose.com</a></li>
+                              <li><a href="tel:(406)%20316-0699" class="hover:opacity-50 hover:underline">(406) 316-0699 (9 am - 5 pm MST)</a></li>
+                              <li><a class="hover:opacity-50 hover:underline">6479 US HWY 93 S Whitefish MT 59937</a></li>
+                              <li class="flex sm:gap-4 gap-2.5 text-neutral-800">
+                                   <a href="https://www.facebook.com/profile.php?id=61560901004411&mibextid=ZbWKwL" target="_blank" class="hover:text-neutral-600">
+                                        <svg class="fill-current sm:h-8 h-6 sm:w-8 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                             <path
+                                                  d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z" />
+                                        </svg>
+                                   </a>
+                                   <a href="https://www.facebook.com/profile.php?id=61560901004411&mibextid=ZbWKwL" target="_blank" class="hover:text-neutral-600">
+                                        <svg class="fill-current sm:h-8 h-6 sm:w-8 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                             <path
+                                                  d="M194.4 211.7a53.3 53.3 0 1 0 59.3 88.7 53.3 53.3 0 1 0 -59.3-88.7zm142.3-68.4c-5.2-5.2-11.5-9.3-18.4-12c-18.1-7.1-57.6-6.8-83.1-6.5c-4.1 0-7.9 .1-11.2 .1c-3.3 0-7.2 0-11.4-.1c-25.5-.3-64.8-.7-82.9 6.5c-6.9 2.7-13.1 6.8-18.4 12s-9.3 11.5-12 18.4c-7.1 18.1-6.7 57.7-6.5 83.2c0 4.1 .1 7.9 .1 11.1s0 7-.1 11.1c-.2 25.5-.6 65.1 6.5 83.2c2.7 6.9 6.8 13.1 12 18.4s11.5 9.3 18.4 12c18.1 7.1 57.6 6.8 83.1 6.5c4.1 0 7.9-.1 11.2-.1c3.3 0 7.2 0 11.4 .1c25.5 .3 64.8 .7 82.9-6.5c6.9-2.7 13.1-6.8 18.4-12s9.3-11.5 12-18.4c7.2-18 6.8-57.4 6.5-83c0-4.2-.1-8.1-.1-11.4s0-7.1 .1-11.4c.3-25.5 .7-64.9-6.5-83l0 0c-2.7-6.9-6.8-13.1-12-18.4zm-67.1 44.5A82 82 0 1 1 178.4 324.2a82 82 0 1 1 91.1-136.4zm29.2-1.3c-3.1-2.1-5.6-5.1-7.1-8.6s-1.8-7.3-1.1-11.1s2.6-7.1 5.2-9.8s6.1-4.5 9.8-5.2s7.6-.4 11.1 1.1s6.5 3.9 8.6 7s3.2 6.8 3.2 10.6c0 2.5-.5 5-1.4 7.3s-2.4 4.4-4.1 6.2s-3.9 3.2-6.2 4.2s-4.8 1.5-7.3 1.5l0 0c-3.8 0-7.5-1.1-10.6-3.2zM448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM357 389c-18.7 18.7-41.4 24.6-67 25.9c-26.4 1.5-105.6 1.5-132 0c-25.6-1.3-48.3-7.2-67-25.9s-24.6-41.4-25.8-67c-1.5-26.4-1.5-105.6 0-132c1.3-25.6 7.1-48.3 25.8-67s41.5-24.6 67-25.8c26.4-1.5 105.6-1.5 132 0c25.6 1.3 48.3 7.1 67 25.8s24.6 41.4 25.8 67c1.5 26.3 1.5 105.4 0 131.9c-1.3 25.6-7.1 48.3-25.8 67z" />
+                                        </svg>
+                                   </a>
+                                   <a target="_blank" class="hover:text-neutral-600">
+                                        <svg class="fill-current sm:h-8 h-6 sm:w-8 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                             <path
+                                                  d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z" />
+                                        </svg>
+                                   </a>
+                              </li>
+                         </ul>
+                    </div>
+               </div>
+               <div class="text-sm font-semibold text-center border-t border-zinc-200 md:mt-9 sm:mt-6 mt-4 sm:pt-6 pt-4">
+                    <p>© 2024 CliqClose, All rights reserved.</p>
+                    <ul class="flex justify-center gap-2 text-violet-800/75">
+                         <li><a href="privacy-policy.html" class="hover:text-violet-800 underline">Privacy Police</a></li>
+                         <li><a href="terms-conditions.html" class="hover:text-violet-800 underline">Terms and Conditions</a></li>
+                         <li><a href="communication-policy.html" class="hover:text-violet-800 underline">Communication Policy</a></li>
+                    </ul>
+               </div>
+          </div>
+     </footer>
+</body>
+
+</html>

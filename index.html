@@ -32,10 +32,10 @@
                     <div :class="sidebar?'opacity-100 visible max-h-80 left-2 rounded-xl x-shadow bg-white':'opacity-0 invisible max-h-0'"
                          class="md:relative absolute top-full md:left-0 md:w-fit w-[calc(100%-1rem)] md:opacity-100 md:visible md:max-h-fit md:pb-0 pb-4 x-animation">
                          <ul class="flex md:flex-row flex-col text-center sm:text-lg font-semibold text-zinc-800">
-                              <li><a href="realtors.html" class="lg:p-5 md:p-4 p-1">Realtors</a></li>
-                              <li><a href="plans.html" class="lg:p-5 md:p-4 p-1">Plans</a></li>
-                              <li><a href="buyers-sellers.html" class="lg:p-5 md:p-4 p-1">Buyers and Sellers</a></li>
-                              <li><a href="about.html" class="lg:p-5 md:p-4 p-1">About</a></li>
+                              <li><a href="about.html" class="lg:p-5 md:p-4 p-1 hover:text-violet-900">About</a></li>
+                              <li><a href="realtors.html" class="lg:p-5 md:p-4 p-1 hover:text-violet-900">Realtors</a></li>
+                              <li><a href="plans.html" class="lg:p-5 md:p-4 p-1 hover:text-violet-900">Plans</a></li>
+                              <li><a href="buyers-sellers.html" class="lg:p-5 md:p-4 p-1 hover:text-violet-900">Buyers and Sellers</a></li>
                          </ul>
                     </div>
                     <div class="flex items-center gap-4">
@@ -57,13 +57,21 @@
                <div class="x-container">
                     <div class="flex flex-wrap items-center">
                          <div class="lg:w-1/2 w-full sm:mt-6 mt-4 md:space-y-3 space-y-1.5 lg:order-1 order-2">
-                              <h1 class="font-bold md:text-4xl sm:text-3xl text-2xl">Unlocking Your Next Closing,<br> One Click at a <span
+                              <h1 class="font-bold md:text-4xl sm:text-3xl text-2xl">Unlocking Your Next Closing, <br> One Click at a <span
                                         class="font-caveat md:text-5xl sm:text-4xl text-2xl text-violet-900">Time.</span></h1>
-                              <h4>At cliQclose, we’re not just about leads; we’re about connections. Let’s turn those “maybes” into “absolutely yes!”</h4>
-                              <a href="contact.html" class="x-btn hover:-translate-y-1">Let's Talk</a>
+                              <h4>At cliQclose, we make turning leads into connections a blast! With our cutting-edge tech, whether you’re
+                                   a real estate pro or just starting out, we’ll help you close deals faster and smarter. Let’s turn those
+                                   “maybes” into “absolutely Yes”</h4>
+                              <a href="contact.html" class="x-btn hover:-translate-y-1">Get in touch now</a>
                          </div>
                          <div class="lg:w-1/2 w-full lg:order-2 order-1">
-                              <img src="assets/img/woman-laptop-paint.png" alt="hero img" class="lg:ml-auto mx-auto lg:w-11/12 w-4/5">
+                              <div class="swiper heroSlider">
+                                   <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="assets/img/review/image-1.png" alt="hero img" class="lg:ml-auto mx-auto lg:w-5/6 w-4/5"></div>
+                                        <div class="swiper-slide"><img src="assets/img/review/image-2.png" alt="hero img" class="lg:ml-auto mx-auto lg:w-5/6 w-4/5"></div>
+                                        <div class="swiper-slide"><img src="assets/img/review/image-3.png" alt="hero img" class="lg:ml-auto mx-auto lg:w-5/6 w-4/5"></div>
+                                   </div>
+                              </div>
                          </div>
                     </div>
                </div>
@@ -122,18 +130,24 @@
                     <div class="x-title md:mt-6 mt-3">
                          <h2>Trusted <span>By</span></h2>
                     </div>
-                    <div class="flex flex-wrap items-center justify-center xl:gap-24 lg:gap-20 md:gap-12 sm:gap-9 gap-4">
+                    <div class="flex flex-wrap items-center justify-center md:gap-12 sm:gap-9 gap-4">
                          <div class="cursor-pointer opacity-80 hover:opacity-100 x-animation">
-                              <img class="x-img-filter md:h-12 sm:h-9 h-5" src="assets/img/client/1-2.png" alt="kw">
+                              <img class="x-img-filter md:h-12 sm:h-9 h-5" src="assets/img/client/1-2.png" alt="Keller williams">
                          </div>
                          <div class="cursor-pointer opacity-80 hover:opacity-100 x-animation">
-                              <img class="x-img-filter md:h-12 sm:h-9 h-5" src="assets/img/client/2-2.png" alt="kw">
+                              <img class="x-img-filter md:h-12 sm:h-9 h-5" src="assets/img/client/2-2.png" alt="Exp realty">
                          </div>
                          <div class="cursor-pointer opacity-80 hover:opacity-100 x-animation">
-                              <img class="x-img-filter md:h-7 sm:h-5 h-2.5" src="assets/img/client/3-2.png" alt="kw">
+                              <img class="x-img-filter md:h-7 sm:h-5 h-2.5" src="assets/img/client/3-2.png" alt="Guild Mortgage">
                          </div>
                          <div class="cursor-pointer opacity-80 hover:opacity-100 x-animation">
-                              <img class="x-img-filter md:h-12 sm:h-9 h-5" src="assets/img/client/4-2.png" alt="kw">
+                              <img class="x-img-filter md:h-12 sm:h-9 h-5" src="assets/img/client/4-2.png" alt="Century21">
+                         </div>
+                         <div class="cursor-pointer opacity-80 hover:opacity-100 x-animation">
+                              <img class="x-img-filter md:h-14 sm:h-9 h-5" src="assets/img/client/5-1.png" alt="Remax">
+                         </div>
+                         <div class="cursor-pointer opacity-80 hover:opacity-100 x-animation">
+                              <img class="x-img-filter md:h-9 sm:h-6 h-3" src="assets/img/client/6-2.png" alt="Coldwell banker Realty">
                          </div>
                     </div>
                </div>
@@ -143,11 +157,10 @@
                <div class="x-container text-center">
                     <div class="x-title md:mt-6 mt-3">
                          <h2>Real <span>Connections,</span> Real <span>Clients</span></h2>
-                         <p>At cliQclose, we take quality seriously. Our team works hard to make sure every lead we generate is accurate and relevant to your needs. We’re always refining our methods
-                              to
-                              keep up with industry best practices. With CliqClose, you can trust that the leads you receive are high-quality and ready to take the next step in their real estate
-                              journey.
-                         </p>
+                         <p>At cliQclose, we take quality seriously. Our team works hard to make sure every lead we generate is
+                              accurate and relevant to your needs. We’re always refining our methods to keep up with industry best
+                              practices. With CliqClose, you can trust that the leads you receive are high-quality and ready to take the
+                              next step in their real estate journey.</p>
                     </div>
                     <div class="grid sm:grid-cols-3 gap-4 md:mt-9 sm:mt-6 mt-4 sm:text-lg">
                          <div>
@@ -240,7 +253,6 @@
                          <div class="swiper-wrapper">
                               <div class="swiper-slide">
                                    <div class="text-center md:space-y-4 space-y-2">
-                                        <img class="md:w-40 w-28 md:h-40 h-28 mx-auto rounded-full object-top object-cover" src="assets/img/review/image-1.png" alt="client profile image">
                                         <blockquote>“CliqClose has been a game changer for my business. Their lead generation system is incredibly efficient and has brought me a steady stream of
                                              high-quality
                                              clients. I can't recommend them enough!”</blockquote>
@@ -252,7 +264,6 @@
                               </div>
                               <div class="swiper-slide">
                                    <div class="text-center md:space-y-4 space-y-2">
-                                        <img class="md:w-40 w-28 md:h-40 h-28 mx-auto rounded-full object-top object-cover" src="assets/img/review/image-2.png" alt="client profile image">
                                         <blockquote>“I've tried several lead generation services over the years, but none have matched the results I've seen with CliqClose. Their team is responsive,
                                              and their leads are consistently top-notch. It's been a huge boost for my real estate career.”</blockquote>
                                         <div>
@@ -263,7 +274,6 @@
                               </div>
                               <div class="swiper-slide">
                                    <div class="text-center md:space-y-4 space-y-2">
-                                        <img class="md:w-40 w-28 md:h-40 h-28 mx-auto rounded-full object-top object-cover" src="assets/img/review/image-3.png" alt="client profile image">
                                         <blockquote>“Cliqclose has been a game-changer for my business. Their lead generation service consistently provides high-quality leads that convert into
                                              clients. I've seen a significant increase in my sales and couldn't be happier with the results. Highly recommend!”</blockquote>
                                         <div>
@@ -274,7 +284,6 @@
                               </div>
                               <div class="swiper-slide">
                                    <div class="text-center md:space-y-4 space-y-2">
-                                        <img class="md:w-40 w-28 md:h-40 h-28 mx-auto rounded-full object-top object-cover" src="assets/img/review/image-1.png" alt="client profile image">
                                         <blockquote>“CliqClose has been instrumental in growing my client base. The quality of the leads is outstanding, and their customer service is exceptional. They
                                              truly understand the needs of real estate professionals.”</blockquote>
                                         <div>
@@ -285,7 +294,6 @@
                               </div>
                               <div class="swiper-slide">
                                    <div class="text-center md:space-y-4 space-y-2">
-                                        <img class="md:w-40 w-28 md:h-40 h-28 mx-auto rounded-full object-top object-cover" src="assets/img/review/image-2.png" alt="client profile image">
                                         <blockquote>“I've tried several lead generation services, but Cliqclose stands out from the rest. The quality and quantity of leads I receive are unmatched.
                                              It's clear they understand the real estate market and know how to connect us with serious buyers and sellers. My business has grown significantly thanks to
                                              Cliqclose.”</blockquote>
@@ -505,6 +513,13 @@
                          spaceBetween: 32
                     },
                },
+          })
+          var swiper = new Swiper(".heroSlider", {
+               loop: true,
+               autoplay: true,
+               autoplaySpeed: 5000,
+               slidesPerView: 1,
+               effect: "flip",
           })
      </script>
 </body>

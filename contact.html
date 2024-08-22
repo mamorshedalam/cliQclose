@@ -30,10 +30,10 @@
                     <div :class="sidebar?'opacity-100 visible max-h-80 left-2 rounded-xl x-shadow bg-white':'opacity-0 invisible max-h-0'"
                          class="md:relative absolute top-full md:left-0 md:w-fit w-[calc(100%-1rem)] md:opacity-100 md:visible md:max-h-fit md:pb-0 pb-4 x-animation">
                          <ul class="flex md:flex-row flex-col text-center sm:text-lg font-semibold text-zinc-800">
-                              <li><a href="realtors.html" class="lg:p-5 md:p-4 p-1">Realtors</a></li>
-                              <li><a href="plans.html" class="lg:p-5 md:p-4 p-1">Plans</a></li>
-                              <li><a href="buyers-sellers.html" class="lg:p-5 md:p-4 p-1">Buyers and Sellers</a></li>
-                              <li><a href="about.html" class="lg:p-5 md:p-4 p-1">About</a></li>
+                              <li><a href="about.html" class="lg:p-5 md:p-4 p-1 hover:text-violet-900">About</a></li>
+                              <li><a href="realtors.html" class="lg:p-5 md:p-4 p-1 hover:text-violet-900">Realtors</a></li>
+                              <li><a href="plans.html" class="lg:p-5 md:p-4 p-1 hover:text-violet-900">Plans</a></li>
+                              <li><a href="buyers-sellers.html" class="lg:p-5 md:p-4 p-1 hover:text-violet-900">Buyers and Sellers</a></li>
                          </ul>
                     </div>
                     <div class="flex items-center gap-4">
@@ -52,7 +52,7 @@
      <main class="x-container">
           <div class="xl:py-40 md:py-32 sm:py-24 py-20 flex flex-wrap">
                <section class="w-full md:!text-left x-title">
-                    <h2>Let's <span>Talk</span></h2>
+                    <h2>Get in <span>Touch</span></h2>
                </section>
                <section class="md:w-1/2 w-full md:mb-0 mb-6">
                     <form>
@@ -81,19 +81,33 @@
                               <textarea id="message" name="message" type="tel" class="bg-neutral-100 text-neutral-900 border border-zinc-200 md:h-40 h-28 sm:p-2.5 p-1.5 rounded-lg"></textarea>
                          </div>
                          <div class="md:mb-4 mb-2">
-                              <p class="text-neutral-400 md:text-sm text-xs">By submitting this form , you hereby acknowledge and agree to the terms and conditions, as well as your privacy policy.
-                                   Please be aware that we may collect and utilize your personal information as outlined in our privacy policy.</label>
+                              <p class="text-neutral-400 md:text-sm text-xs">By submitting this form , you hereby acknowledge and agree to the terms and conditions, as well as your
+                                   privacy policy. Please be aware that we may collect and utilize your personal information as outlined in
+                                   our privacy policy.</label>
                          </div>
                          <button class="x-btn w-full">Submit</button>
                     </form>
                </section>
                <section class="md:w-1/2 w-full xl:pl-40 lg:pl-20 md:pl-9">
-                    <p>We’re here to help you grow your real estate business. Reach out today to learn more about our services and how we can assist you in achieving your goals.</p>
+                    <p>We’re here to help you grow your real estate business. Reach out today to learn more about our services
+                         and how we can assist you in achieving your goals.</p>
+                    <h3 class="md:text-lg text-base sm:mb-3 mb-1 sm:mt-6 mt-2.5">Office Address</h3>
+                    <ul class="sm:space-y-2 space-y-1">
+                         <li>cliQclose,<br>
+                              123 Main Street,<br>
+                              Anytown, USA 12345
+                         </li>
+                    </ul>
+                    <h3 class="md:text-lg text-base sm:mb-3 mb-1 sm:mt-6 mt-2.5">Business Hours
+                    </h3>
+                    <ul>
+                         <li>Mon-Fri: 9:00 AM – 6:00 PM MST</li>
+                         <li>24/7 Online Support</li>
+                    </ul>
                     <h3 class="md:text-lg text-base sm:mb-3 mb-1 sm:mt-6 mt-2.5">Contact Info</h3>
                     <ul class="sm:space-y-2 space-y-1">
-                         <li><a href="mailto:info@cliqclose.com" class="hover:opacity-50 hover:underline">info@cliqclose.com</a></li>
-                         <li><a href="tel:(406)%20316-0699" class="hover:opacity-50 hover:underline">(406) 316-0699 (9 am - 5 pm MST)</a></li>
-                         <li><a class="hover:opacity-50 hover:underline">6479 US HWY 93 S Whitefish MT 59937</a></li>
+                         <li><a href="tel:(406)%20316-0699" class="hover:opacity-50 hover:underline">(123) 456-7890</a></li>
+                         <li><a href="mailto:support@cliqclose.com" class="hover:opacity-50 hover:underline">support@cliqclose.com</a></li>
                          <li class="flex sm:gap-4 gap-2.5 text-neutral-800">
                               <a href="https://www.facebook.com/profile.php?id=61560901004411&amp;mibextid=ZbWKwL" target="_blank" class="hover:text-neutral-600">
                                    <svg class="fill-current sm:h-8 h-6 sm:w-8 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
