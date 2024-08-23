@@ -15,8 +15,87 @@
      <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Sofia+Sans:wght@1..1000&display=swap" rel="stylesheet">
      <!-- TAILWIND CSS -->
      <link href="./assets/css/output.css" rel="stylesheet">
+     <!-- EMAIL JS -->
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
      <!-- ALPINE JS -->
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+     <!-- OWN SCRIPT -->
+     <script>
+          function agentForm() {
+               return {
+                    agent: {
+                         firstName: "",
+                         lastName: "",
+                         email: "",
+                         phone: "",
+                         address: "",
+                         license: "",
+                         mls: "",
+                         brokerage: "",
+                         stateOfWork: "",
+                         country: "",
+                         zip: "",
+                         radius: "",
+                         multiState: "false",
+                         nameOfStates: "",
+                         handleRentals: "",
+                         team: "",
+                         otherCompany: "",
+                    },
+                    buttonText: "Submit",
+                    loading: false,
+
+                    agentSubmit() {
+                         const submitData = {
+                              firstName: this.agent.firstName,
+                              lastName: this.agent.lastName,
+                              email: this.agent.email,
+                              phone: this.agent.phone,
+                              address: this.agent.address,
+                              license: this.agent.license,
+                              mls: this.agent.mls,
+                              brokerage: this.agent.brokerage,
+                              stateOfWork: this.agent.stateOfWork,
+                              country: this.agent.country,
+                              zip: this.agent.zip,
+                              radius: this.agent.radius,
+                              multiState: "false",
+                              nameOfStates: this.agent.nameOfStates,
+                              handleRentals: this.agent.handleRentals,
+                              team: this.agent.team,
+                              otherCompany: this.agent.otherCompany,
+                         }
+                         this.buttonText = "Submit...";
+                         this.loading = true;
+
+                         // EMAIL JS INIT
+                         (function () {
+                              emailjs.init({
+                                   publicKey: "GnTwbxred1KHRh1oA",
+                              });
+                         })();
+
+                         const serviceID = "service_tl3bhiv";
+                         const templateID = "template_9wo0gyf";
+                         emailjs.send(serviceID, templateID, submitData)
+                              .then((response) => {
+                                   alert("Sending Successful");
+                              })
+                              .catch((error) => {
+                                   alert("Sending Fail!");
+                                   console.log(error);
+                              })
+                              .finally(() => {
+                                   this.data.message = "";
+                                   this.buttonText = "Send";
+                                   this.loading = false;
+                              });
+                    },
+
+               };
+
+          }
+     </script>
 </head>
 
 <body x-cloak x-data="{shadowActive:false}" @scroll.window="shadowActive = window.pageYOffset > 50">
@@ -57,63 +136,65 @@
                          <h2>Agent <span>Registration</span></h2>
                          <p>Welcome to cliQclose, We cant wait to get you started, Please fill out the following information.</p>
                     </div>
-                    <form class="grid grid-cols-6 sm:gap-4 gap-2" x-data="{states:'false'}">
+                    <form x-data="agentForm()" @submit.prevent="agentSubmit" class="grid grid-cols-6 sm:gap-4 gap-2">
                          <div class="col-span-6">
                               <h3 class="md:text-lg text-base font-semibold">Personal Information:</h3>
                          </div>
                          <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="agentFirstName" class="md:text-lg text-base">First Name <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input id="agentFirstName" name="agentFirstName" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="agent.firstName" id="agentFirstName" name="agentFirstName" type="text"
+                                   class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="agentLastName" class="md:text-lg text-base">Last Name <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input id="agentLastName" name="agentLastName" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="agent.lastName" id="agentLastName" name="agentLastName" type="text"
+                                   class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="agentMail" class="md:text-lg text-base">Email <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input id="agentMail" name="agentMail" type="email" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="agent.email" id="agentMail" name="agentMail" type="email" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="agentPhone" class="md:text-lg text-base">Phone <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input id="agentPhone" name="agentPhone" type="tel" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="agent.phone" id="agentPhone" name="agentPhone" type="tel" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="col-span-6 flex flex-col justify-between gap-2">
                               <label for="agentAddress" class="md:text-lg text-base">Address <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input id="agentAddress" name="agentAddress" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="agent.address" id="agentAddress" name="agentAddress" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="col-span-6">
                               <h3 class="md:text-lg text-base font-semibold">Professional Details:</h3>
                          </div>
                          <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="agentLicense" class="md:text-lg text-base">License Number <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input id="agentLicense" name="agentLicense" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="agent.license" id="agentLicense" name="agentLicense" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="agentMsl" class="md:text-lg text-base">MLS ID <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input id="agentMsl" name="agentMsl" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="agent.mls" id="agentMsl" name="agentMsl" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="col-span-6 flex flex-col justify-between gap-2">
                               <label for="agentBrokerage" class="md:text-lg text-base">Brokerage Name <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input id="agentBrokerage" name="agentBrokerage" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="agent.brokerage" id="agentBrokerage" name="agentBrokerage" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="col-span-6">
                               <h3 class="md:text-lg text-base font-semibold">Location Preferences:</h3>
                          </div>
                          <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="agentStateWork" class="md:text-lg text-base">Primary State of Work <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input id="agentStateWork" name="agentStateWork" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="agent.stateOfWork" id="agentStateWork" name="agentStateWork" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="agentCountry" class="md:text-lg text-base">Primary County <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input id="agentCountry" name="agentCountry" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="agent.country" id="agentCountry" name="agentCountry" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="col-span-6 flex flex-col justify-between gap-2">
                               <label for="agentZipCode" class="md:text-lg text-base">Preferred Zip Codes <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input id="agentZipCode" name="agentZipCode" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="agent.zip" id="agentZipCode" name="agentZipCode" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="agentRadius" class="md:text-lg text-base">Service Radius (in miles) <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <select id="buyerMultiState" name="buyerMultiState" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <select x-model="agent.radius" id="agentRadius" name="agentRadius" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                                    <option value="15">Up to 15 miles</option>
                                    <option value="20">Up to 20 miles</option>
                                    <option value="30">Up to 30 miles</option>
@@ -125,40 +206,40 @@
                          <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="buyerMultiState" class="md:text-lg text-base">Do you work in multiple states? <span class="text-neutral-400 text-sm">(required)</span></label>
                               <span class="text-neutral-400 text-sm block">If yes, please name the states:</span>
-                              <select x-model="states" id="buyerMultiState" name="buyerMultiState" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <select x-model="agent.multiState" id="buyerMultiState" name="buyerMultiState" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                                    <option value="true">Yes</option>
                                    <option value="false">No</option>
                               </select>
                          </div>
-                         <div x-clock x-show="states == 'true'" class="col-span-6 flex flex-col justify-between gap-2">
+                         <div x-clock x-show="agent.multiState == 'true'" class="col-span-6 flex flex-col justify-between gap-2">
                               <label for="agentStates" class="md:text-lg text-base">Names of The States <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input id="agentStates" name="agentStates" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="agent.nameOfStates" id="agentStates" name="agentStates" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="col-span-6">
                               <h3 class="md:text-lg text-base font-semibold">Additional Information:</h3>
                          </div>
                          <div class="lg:col-span-2 sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="buyerHandleRental" class="md:text-lg text-base">Do you handle rentals <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <select id="buyerHandleRental" name="buyerHandleRental" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <select x-model="agent.handleRentals" id="buyerHandleRental" name="buyerHandleRental" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                                    <option value="true">Yes</option>
                                    <option value="false">No</option>
                               </select>
                          </div>
                          <div class="lg:col-span-2 sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="buyerTeam" class="md:text-lg text-base">Are you in a team <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <select id="buyerTeam" name="buyerTeam" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <select x-model="agent.team" id="buyerTeam" name="buyerTeam" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                                    <option value="true">Yes</option>
                                    <option value="false">No</option>
                               </select>
                          </div>
                          <div class="lg:col-span-2 sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="buyerBefore" class="md:text-lg text-base">Have you used other lead generation company before <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <select id="buyerBefore" name="buyerBefore" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <select x-model="agent.otherCompany" id="buyerBefore" name="buyerBefore" class="bg-neutral-100 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                                    <option value="true">Yes</option>
                                    <option value="false">No</option>
                               </select>
                          </div>
-                         <div class="col-span-6"><button class="x-btn md:w-fit w-full">Submit</button></div>
+                         <div class="col-span-6"><button type="submit" x-text="buttonText" :disabled="loading" class="x-btn md:w-fit w-full">Submit</button></div>
                     </form>
                </div>
           </section>
