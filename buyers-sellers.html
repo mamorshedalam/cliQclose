@@ -39,9 +39,9 @@
                          houseType: "",
                          bedroom: "",
                          bathroom: "",
-                         preApproved: "",
-                         preQualified: "",
-                         otherRealtor: "",
+                         preApproved: "true",
+                         preQualified: "true",
+                         otherRealtor: "true",
                     },
                     buttonText: "Submit",
                     loading: false,
@@ -73,12 +73,12 @@
                          // EMAIL JS INIT
                          (function () {
                               emailjs.init({
-                                   publicKey: "GnTwbxred1KHRh1oA",
+                                   publicKey: "",
                               });
                          })();
 
-                         const serviceID = "service_tl3bhiv";
-                         const templateID = "template_9wo0gyf";
+                         const serviceID = "";
+                         const templateID = "";
                          emailjs.send(serviceID, templateID, submitData)
                               .then((response) => {
                                    alert("Sending Successful");
@@ -141,12 +141,12 @@
                          // EMAIL JS INIT
                          (function () {
                               emailjs.init({
-                                   publicKey: "GnTwbxred1KHRh1oA",
+                                   publicKey: "",
                               });
                          })();
 
-                         const serviceID = "service_tl3bhiv";
-                         const templateID = "template_9wo0gyf";
+                         const serviceID = "";
+                         const templateID = "";
                          emailjs.send(serviceID, templateID, submitData)
                               .then((response) => {
                                    alert("Sending Successful");
@@ -322,11 +322,13 @@
                     <form x-data="sellerForm()" @submit.prevent="sellerSubmit" class="grid grid-cols-6 sm:gap-4 gap-2">
                          <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="sellerFirstName" class="md:text-lg text-base">First Name <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input x-model="seller.firstName" id="sellerFirstName" name="sellerFirstName" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="seller.firstName" id="sellerFirstName" name="sellerFirstName" type="text"
+                                   class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="sellerLastName" class="md:text-lg text-base">Last Name <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input x-model="seller.lastName" id="sellerLastName" name="sellerLastName" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="seller.lastName" id="sellerLastName" name="sellerLastName" type="text"
+                                   class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="sellerMail" class="md:text-lg text-base">Email <span class="text-neutral-400 text-sm">(required)</span></label>
@@ -338,7 +340,8 @@
                          </div>
                          <div class="col-span-6 flex flex-col justify-between gap-2">
                               <label for="sellerAddress" class="md:text-lg text-base">Address <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input x-model="seller.address" id="sellerAddress" name="sellerAddress" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="seller.address" id="sellerAddress" name="sellerAddress" type="text"
+                                   class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="lg:col-span-2 sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="sellerState" class="md:text-lg text-base">State <span class="text-neutral-400 text-sm">(required)</span></label>
@@ -354,11 +357,13 @@
                          </div>
                          <div class="lg:col-span-2 sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="sellerHouseType" class="md:text-lg text-base">House Type</label>
-                              <input x-model="seller.houseType" id="sellerHouseType" name="sellerHouseType" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="seller.houseType" id="sellerHouseType" name="sellerHouseType" type="text"
+                                   class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="lg:col-span-2 sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="sellerTimeline" class="md:text-lg text-base">Timeline <span class="text-neutral-400 text-sm">(required)</span></label>
-                              <input x-model="seller.timeline" id="sellerTimeline" name="sellerTimeline" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="seller.timeline" id="sellerTimeline" name="sellerTimeline" type="text"
+                                   class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="lg:col-span-2 sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="sellerPrice" class="md:text-lg text-base">Asking Price <span class="text-neutral-400 text-sm">(required)</span></label>
@@ -370,7 +375,8 @@
                          </div>
                          <div class="lg:col-span-2 sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="sellerBathNo" class="md:text-lg text-base">No. of Bathrooms</label>
-                              <input x-model="seller.bathroom" id="sellerBathNo" name="sellerBathNo" type="text" class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
+                              <input x-model="seller.bathroom" id="sellerBathNo" name="sellerBathNo" type="text"
+                                   class="bg-neutral-100 text-neutral-900 border border-zinc-200 sm:p-2.5 p-1.5 rounded-lg">
                          </div>
                          <div class="lg:col-span-2 sm:col-span-3 col-span-6 flex flex-col justify-between gap-2">
                               <label for="buyerWorkWOther" class="md:text-lg text-base">Working With Other Realtor <span class="text-neutral-400 text-sm">(required)</span></label>

@@ -1,0 +1,41 @@
+
+New Buyer{{firstName}} message
+
+CliqClose Buyer
+Byers Details:
+
+First Name: {{firstName}}
+
+Last Name: {{lastName}}
+
+Email: {{email}}
+
+Phone: {{phone}}
+
+Address: {{address}}
+
+State: {{state}}
+
+City: {{city}}
+
+Zipcode: {{zip}}
+
+Budget: {{budget}}
+
+Timeline: {{timeline}}
+
+What is Credit Score: {{credit}}
+
+Preferred Neighborhood: {{neighborhood}}
+
+House Type: {{houseType}}
+
+No. of Bedrooms: {{bedroom}}
+
+No. of Bathrooms: {{bathroom}}
+
+Are You Pre-approved: {{preApproved}}
+
+Are You Pre-qualified: {{preQualified}}
+
+Working With Other Realtor: {{otherRealtor}}
